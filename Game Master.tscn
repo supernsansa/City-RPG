@@ -1,10 +1,98 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/Road_Tilemap.png" type="Texture" id=1]
+[ext_resource path="res://assets/placeholder_player.png" type="Texture" id=2]
+[ext_resource path="res://Movement.gd" type="Script" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="TileSet" id=1]
+0/name = "Road_Tilemap.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 112, 16 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 6, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Road_Tilemap.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 16, 16 )
+1/tile_mode = 2
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
 
-[node name="Game Master" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 6, 6 )
+
+[node name="GameMaster" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 5, 5 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
+show_collision = true
 format = 1
+tile_data = PoolIntArray( -589825, 536870912, 6, -655360, 536870912, 6, -655359, 536870912, 6, -655358, 536870912, 6, -655357, 536870912, 6, -524289, 536870912, 6, -589824, 536870912, 4, -589823, 536870912, 5, -589822, 0, 4, -589821, 536870912, 6, -458753, 536870912, 6, -524288, 1073741824, 3, -524287, 1073741824, 2, -524286, 536870912, 3, -524285, 536870912, 6, -393217, 536870912, 6, -458752, 0, 1, -458751, 0, 0, -458750, 1610612736, 1, -458749, 536870912, 6, -327681, 536870912, 6, -393216, 0, 1, -393215, 0, 0, -393214, 1610612736, 1, -393213, 536870912, 6, -262145, 536870912, 6, -327680, 0, 1, -327679, 0, 0, -327678, 1610612736, 1, -327677, 536870912, 6, -196609, 536870912, 6, -262144, 0, 1, -262143, 0, 0, -262142, 1610612736, 1, -262141, 536870912, 6, -131073, 536870912, 6, -196608, 0, 1, -196607, 1610612736, 0, -196606, 1610612736, 1, -196605, 536870912, 6, -65537, 536870912, 6, -131072, 0, 1, -131071, 1610612736, 0, -131070, 1610612736, 1, -131069, 536870912, 6, -1, 536870912, 6, -65536, 0, 1, -65535, 0, 0, -65534, 1610612736, 1, -65533, 536870912, 6, 65535, 536870912, 6, 0, 1610612736, 4, 1, 1073741824, 5, 2, 1073741824, 4, 3, 536870912, 6, 131071, 536870912, 6, 65536, 536870912, 6, 65537, 536870912, 6, 65538, 536870912, 6, 65539, 536870912, 6, 65554, 0, 6 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 118, -622 )
+scale = Vector2( 5, 5 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
