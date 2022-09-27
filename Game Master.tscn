@@ -87,7 +87,6 @@ scale = Vector2( 5, 5 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
